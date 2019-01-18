@@ -3,13 +3,16 @@ import sys
 relativePath = os.getcwd()
 inputPath = sys.argv[1]
 outputPath = sys.argv[2]
+removeSpace = sys.argv[3]
 inputFile = open(relativePath + '\\' + inputPath,"r")
 outputFile = open(relativePath + '\\' + outputPath,"w")
 while True:
 	char=inputFile.read(1)
 	if not char: break
 	if char=='\n': char = ''
-	if char==' ': char = ''
+	if char=='\t': char = ''
+	if char=='\v': char = ''
+	if removeSpace=="t" and char==' ': char = ''
 	outputFile.write(char)
 outputFile = open(relativePath + '\\' + outputPath,"r")
 inputSize = os.fstat(inputFile.fileno()).st_size
