@@ -13,7 +13,9 @@ while True:
 	if char=='\n': char = ''
 	if char=='\t': char = ''
 	if char=='\v': char = ''
-	if removeSpace=="t" and lastChar== ' ' and char == lastChar: char = ''
+	if removeSpace=="t" and lastChar== ' ' and char == lastChar: 
+		lastChar = char
+		char = ''
 	outputFile.write(char)
 	lastChar = char
 outputFile = open(relativePath + '\\' + outputPath,"r")
