@@ -19,8 +19,8 @@ while True:
 outputFile = open(relativePath + '\\' + outputPath,"r")
 inputSize = os.fstat(inputFile.fileno()).st_size
 outputSize = os.fstat(outputFile.fileno()).st_size
-print("Input size: ", end='');
+print("Input size: ", end='')
 print(inputSize)
-print("Output size: ", end='');
+print("Output size: ", end='')
 print(outputSize)
 print(relativePath + '\\' + outputPath)
